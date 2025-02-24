@@ -1,0 +1,264 @@
+/* resumeTheme.css
+   Replicates the color, font, and two-column layout
+   from DevResume Sketch Template PDF.
+*/
+
+/* -----------------------------
+   1. Global
+------------------------------ */
+html,
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; /* Clean sans-serif */
+  background-color: #fff;    /* White page background */
+  color: #333;               /* Dark gray text for readability */
+  line-height: 1.6;
+}
+
+/* Container that wraps the entire resume */
+.resume-container {
+  max-width: 1100px;        /* Slightly wider to accommodate two columns */
+  margin: 0 auto;           /* Center the container */
+  padding: 1.5rem;
+}
+
+/* 
+   If you want the top-level layout to be two columns:
+   Left column ~30%, Right column ~70%.
+*/
+.resume-columns {
+  display: flex;
+  flex-wrap: wrap;           /* For responsive wrapping on smaller screens */
+  gap: 2rem;                 /* Spacing between columns */
+}
+
+/* Left column: remaining space for main sections (experience, projects, etc.) */
+.left-col {
+  flex: 1;
+  min-width: 0;
+}
+
+/* Right column: narrower (for contact, skills, languages, interests) */
+.right-col {
+  flex: 0 0 300px;
+  max-width: 300px;
+}
+
+/* 
+   Adjust layout for mobile:
+   The columns stack at narrower widths.
+*/
+@media (max-width: 768px) {
+  .resume-columns {
+    flex-direction: column;
+  }
+  .left-col,
+  .right-col {
+    max-width: 100%;
+    flex: 1;
+  }
+}
+
+/* -----------------------------
+   2. Header (Name, Title, Contact)
+------------------------------ */
+.resume-header {
+  margin-bottom: 2rem;
+  padding-bottom: 1rem;
+  border-bottom: 2px solid #ccc;
+}
+
+.resume-header .header-columns {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+/* Left column: Name & Role */
+.resume-header.header-left {
+  flex: 1;
+  text-align: left;
+}
+
+/* Right column: Contact info */
+.resume-header .header-right {
+  flex: 0 0 300px; /* Fixed width for contact details */
+  text-align: right;
+}
+
+.resume-header .name {
+  font-size: 2rem; /* Approximately 20-24pt */
+  font-weight: bold;
+  margin: 0;
+  color: #333;
+}
+
+.resume-header .role {
+  font-size: 1.2rem; /* Slightly smaller than the name */
+  margin: 0.5rem 0;
+  color: #555;
+}
+
+.resume-header .contact-info {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  font-size: 0.9rem;
+  color: #666;
+}
+
+.resume-header .contact-info li {
+  margin-bottom: 0.2rem;
+}
+
+/* -----------------------------
+   3. Section Titles
+------------------------------ */
+.section-title {
+  font-size: 1.1rem;        
+  font-weight: bold;
+  text-transform: uppercase; /* The PDF often uses uppercase headings */
+  margin-bottom: 0.8rem;
+  border-bottom: 2px solid #ccc;
+  padding-bottom: 0.3rem;
+  color: #333;              /* Keep headings in strong black/dark gray */
+}
+
+/* 
+   If you want smaller subtitles, e.g., for sub-sections:
+*/
+.sub-title {
+  font-size: 1rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+  color: #333;
+}
+
+/* -----------------------------
+   4. Section Layout
+------------------------------ */
+.resume-section {
+  margin-bottom: 2rem;      /* Space between sections */
+}
+
+.section-content {
+  font-size: 0.95rem;       /* Slightly smaller than headings */
+  color: #333;
+  line-height: 1.6;
+}
+
+/* For items in a list (experience, projects, education, etc.) */
+.section-item {
+  margin-bottom: 1.5rem;
+}
+
+.section-item:last-child {
+  margin-bottom: 0;
+}
+
+/* Titles within the item (e.g. job title, project name) */
+.section-item-title {
+  font-weight: bold;
+  margin: 0 0 0.2rem 0;
+  color: #333;
+}
+
+/* Sub-info like company name, date range, location, etc. */
+.section-item-meta {
+  font-size: 0.9rem;
+  color: #666;
+  font-style: italic;
+  margin: 0 0 0.5rem 0;
+}
+
+/* The main description text for an item */
+.section-item-desc {
+  margin: 0;
+  font-size: 0.95rem;
+  color: #444;
+  line-height: 1.5;
+}
+
+/* -----------------------------
+   5. Side Sections (Skills, Interests, Languages)
+------------------------------ */
+.side-section {
+  margin-bottom: 2rem; 
+}
+
+.side-section-title {
+  font-weight: bold;
+  font-size: 1rem;
+  margin-bottom: 0.8rem;
+  text-transform: uppercase;
+}
+
+.side-list {
+  list-style-type: none;
+  padding-left: 0;
+  margin-left: 0;
+}
+
+.side-list li {
+  margin-bottom: 0.4rem;
+  font-size: 0.9rem;
+  color: #444;
+}
+
+.side-list li::before {
+  content: "•";
+  color: #999;
+  display: inline-block;
+  width: 1rem;
+  margin-left: -1rem;
+}
+
+/* -----------------------------
+   6. Projects or Additional Info
+------------------------------ */
+.project-link {
+  color: #007acc;           /* If you want a subtle accent for hyperlinks */
+  text-decoration: none;
+}
+
+.project-link:hover {
+  text-decoration: underline;
+}
+
+/* -----------------------------
+   7. Education 
+------------------------------ */
+.edu-item-title {
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 0.2rem;
+}
+
+.edu-item-institution {
+  font-style: italic;
+  font-size: 0.9rem;
+  color: #666;
+  margin: 0;
+}
+
+.edu-item-dates {
+  font-size: 0.9rem;
+  color: #777;
+  margin-bottom: 0.5rem;
+}
+
+/* -----------------------------
+   8. Additional Tweaks
+------------------------------ */
+/* If you want a subtle background for the left column: */
+.left-col {
+  padding: 1rem;
+  border-right: 2px solid #eee;
+}
+
+/* If you want to highlight headings in a slightly darker color: */
+.section-title, .side-section-title {
+  color: #222;
+}
