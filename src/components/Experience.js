@@ -6,14 +6,14 @@ function Experience({ experiences }) {
     <section>
       <h2 className="section-title">Work Experiences</h2>
       {experiences.map((exp, idx) => (
-        <div key={idx} style={{ marginBottom: "1.5rem" }}>
-          <h3 style={{ marginBottom: "0.2rem" }}>
-            {exp.role} | {exp.company}
+        <div key={idx} className="section-item">
+          <h3 className="section-item-title">
+            {exp.role}
           </h3>
-          <p style={{ fontStyle: "italic", margin: "0 0 0.5rem" }}>
-            {exp.startDate} - {exp.endDate}
-          </p>
-          <p style={{ lineHeight: "1.6" }}>{exp.description}</p>
+          <div className="experience-dates">
+            <span className="company-name">{exp.company}</span> | {exp.startDate} - {exp.endDate}
+          </div>
+          <p className="section-item-desc">{exp.description}</p>
         </div>
       ))}
     </section>

@@ -7,7 +7,7 @@ function Projects({ projects }) {
       <h2 className="section-title">Projects</h2>
       {projects.map((project, idx) => (
         <div key={idx} style={{ marginBottom: "1.5rem" }}>
-          <h3>
+          <h3 className="section-item-title">
             {project.link ? (
               <a
                 href={project.link}

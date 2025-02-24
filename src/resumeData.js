@@ -1,21 +1,21 @@
 // src/resumeData.js
 
 const resumeData = {
-    name: "SIMON DOE",
-    title: "Senior Software Engineer",
+    name: "Baohua Cai",
+    title: "Development Engineer Manager",
     contact: {
-      phone: "0123 4567 890",
-      email: "simon.doe@yourwebsite.com",
-      website: "www.yourwebsite.com",
-      location: "New York",
-      github: "github.com/username",
-      linkedin: "linkedin.com/in/username",
-      twitter: "@twittername"
+      phone: "086 186 XXXX XXXX",
+      email: "caibaohua@live.com",
+      location: "Shanghai, China",
+      github: "github.com/caibaohua",
+      linkedin: "linkedin.com/in/caibaohua"
     },
     summary: `
-      Summarise your career here. Aenean massa. Cum sociis natoque penatibus 
-      et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, 
-      ultricies nec, pellentesque eu, pretium quis, sem.
+      Summarise your career here. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes,
+      nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat
+      massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut,
+      imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Maecenas nec odio et ante
+      tincidunt tempus. Donec vitae sapien ut libero venenatis faucibus. Nullam quis ante.
     `,
     experiences: [
       {

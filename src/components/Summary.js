@@ -3,9 +3,17 @@ import React from "react";
 
 function Summary({ summary }) {
   return (
-    <section>
-      <h2 className="section-title">Profile Summary</h2>
-      <p style={{ lineHeight: "1.6" }}>{summary}</p>
+    <section className="summary-section">
+      <div className="summary-content">
+        <div className="avatar">
+          <img 
+            src="/avatar-placeholder.jpg" 
+            alt="Profile avatar" 
+            className="avatar-image"
+          />
+        </div>
+        <p style={{ lineHeight: "1.6" }}>{summary}</p>
+      </div>
     </section>
   );
 }

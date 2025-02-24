@@ -5,9 +5,9 @@ function Skills({ technicalSkills, professionalSkills }) {
   return (
     <section>
       <h2 className="section-title">Skills</h2>
-      <div style={{ display: "flex", gap: "2rem", flexWrap: "wrap" }}>
+      <div style={{ display: "flex", gap: "0.5rem", flexWrap: "wrap" }}>
         <div style={{ flex: "1" }}>
-          <h3>Technical</h3>
+          <h3 class="section-item-title">Technical</h3>
           <ul>
             {technicalSkills.map((skill, idx) => (
               <li key={idx}>{skill}</li>
@@ -15,7 +15,7 @@ function Skills({ technicalSkills, professionalSkills }) {
           </ul>
         </div>
         <div style={{ flex: "1" }}>
-          <h3>Professional</h3>
+          <h3 class="section-item-title">Professional</h3>
           <ul>
             {professionalSkills.map((skill, idx) => (
               <li key={idx}>{skill}</li>

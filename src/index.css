@@ -89,15 +89,17 @@ body {
 }
 
 .resume-header .name {
-  font-size: 2rem; /* Approximately 20-24pt */
-  font-weight: bold;
-  margin: 0;
-  color: #333;
+  font-size: 2.75rem;
+  font-weight: 900;
+  letter-spacing: 0.25rem;
+  color: #54B689;
+  margin-bottom: 0;  /* Remove bottom margin */
 }
 
 .resume-header .role {
-  font-size: 1.2rem; /* Slightly smaller than the name */
-  margin: 0.5rem 0;
+  font-size: 1.25rem;
+  font-weight: 300;
+  margin: 0.25rem 0;  /* Reduce margin from 0.5rem to 0.25rem */
   color: #555;
 }
 
@@ -113,17 +115,41 @@ body {
   margin-bottom: 0.2rem;
 }
 
+.contact-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.contact-icon {
+  width: 14px;
+  height: 14px;
+  fill: #54B689;  /* Match theme color */
+}
+
 /* -----------------------------
    3. Section Titles
 ------------------------------ */
 .section-title {
   font-size: 1.1rem;        
   font-weight: bold;
-  text-transform: uppercase; /* The PDF often uses uppercase headings */
-  margin-bottom: 0.8rem;
-  border-bottom: 2px solid #ccc;
-  padding-bottom: 0.3rem;
-  color: #333;              /* Keep headings in strong black/dark gray */
+  text-transform: uppercase;
+  color: #333;
+  position: relative;
+  padding-left: 1rem;
+  letter-spacing: 0.15rem;
+  margin-bottom: 1rem;  /* Add some space below section titles */
+}
+
+.section-title::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 05px;
+  height: 100%;
+  background-color: #54B689;  /* Same color as your theme */
 }
 
 /* 
@@ -152,6 +178,7 @@ body {
 /* For items in a list (experience, projects, education, etc.) */
 .section-item {
   margin-bottom: 1.5rem;
+  position: relative;  /* For absolute positioning of dates */
 }
 
 .section-item:last-child {
@@ -160,9 +187,39 @@ body {
 
 /* Titles within the item (e.g. job title, project name) */
 .section-item-title {
+  font-size: 0.95rem;  /* Make h3 smaller than h2 */
   font-weight: bold;
   margin: 0 0 0.2rem 0;
   color: #333;
+}
+
+/* New styles for the dates */
+.company-name {
+  font-weight: bold;
+  margin-right: 0.1rem;
+}
+
+.experience-dates {
+  position: absolute;
+  right: 0;
+  top: 0;
+  font-size: 0.9rem;
+  color: #666;
+  font-style: italic;
+}
+
+/* Update mobile view to handle company name */
+@media (max-width: 768px) {
+  .experience-dates {
+    position: static;
+    display: block;
+    margin-bottom: 0.5rem;
+  }
+  
+  .company-name {
+    display: block;
+    margin-bottom: 0.2rem;
+  }
 }
 
 /* Sub-info like company name, date range, location, etc. */
@@ -254,11 +311,47 @@ body {
 ------------------------------ */
 /* If you want a subtle background for the left column: */
 .left-col {
-  padding: 1rem;
+  padding-right: 1rem;
   border-right: 2px solid #eee;
 }
 
 /* If you want to highlight headings in a slightly darker color: */
 .section-title, .side-section-title {
-  color: #222;
+  color: #54B689;
+}
+
+.summary-section {
+  margin-bottom: 2rem;
+  border-bottom: 2px solid #ccc;
+}
+
+.summary-content {
+  display: flex;
+  align-items: flex-start;
+  gap: 2rem;
+}
+
+.avatar {
+  flex-shrink: 0;
+}
+
+.avatar-image {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+/* Add responsive layout for summary section */
+@media (max-width: 768px) {
+  .summary-content {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 1rem;
+  }
+  
+  .avatar {
+    margin-bottom: 1rem;
+  }
 }
