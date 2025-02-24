@@ -4,7 +4,7 @@
 */
 
 /* -----------------------------
-   1. Global
+   1. Global Styles
 ------------------------------ */
 html,
 body {
@@ -23,10 +23,9 @@ body {
   padding: 1.5rem;
 }
 
-/* 
-   If you want the top-level layout to be two columns:
-   Left column ~30%, Right column ~70%.
-*/
+/* -----------------------------
+   2. Layout
+------------------------------ */
 .resume-columns {
   display: flex;
   flex-wrap: wrap;           /* For responsive wrapping on smaller screens */
@@ -37,6 +36,8 @@ body {
 .left-col {
   flex: 1;
   min-width: 0;
+  padding-right: 1rem;
+  border-right: 2px solid #eee;
 }
 
 /* Right column: narrower (for contact, skills, languages, interests) */
@@ -61,7 +62,7 @@ body {
 }
 
 /* -----------------------------
-   2. Header (Name, Title, Contact)
+   3. Header
 ------------------------------ */
 .resume-header {
   margin-bottom: 2rem;
@@ -132,13 +133,13 @@ body {
 }
 
 /* -----------------------------
-   3. Section Titles
+   4. Section Styles
 ------------------------------ */
 .section-title {
   font-size: 1.1rem;        
   font-weight: bold;
   text-transform: uppercase;
-  color: #333;
+  color: #54B689;
   position: relative;
   padding-left: 1rem;
   letter-spacing: 0.15rem;
@@ -151,7 +152,7 @@ body {
   left: 0;
   top: 50%;
   transform: translateY(-50%);
-  width: 05px;
+  width: 5px;
   height: 100%;
   background-color: #54B689;  /* Same color as your theme */
 }
@@ -167,7 +168,46 @@ body {
 }
 
 /* -----------------------------
-   4. Section Layout
+   5. Summary Section
+------------------------------ */
+.summary-section {
+  margin-bottom: 2rem;
+  border-bottom: 2px solid #eee;
+}
+
+.summary-content {
+  display: flex;
+  align-items: flex-start;
+  gap: 2rem;
+}
+
+.avatar {
+  flex-shrink: 0;
+}
+
+.avatar-image {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+/* Add responsive layout for summary section */
+@media (max-width: 768px) {
+  .summary-content {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 1rem;
+  }
+  
+  .avatar {
+    margin-bottom: 1rem;
+  }
+}
+
+/* -----------------------------
+   6. Experience Section
 ------------------------------ */
 .resume-section {
   margin-bottom: 2rem;      /* Space between sections */
@@ -243,7 +283,7 @@ body {
 }
 
 /* -----------------------------
-   5. Side Sections (Skills, Interests, Languages)
+   7. Side Sections
 ------------------------------ */
 .side-section {
   margin-bottom: 2rem; 
@@ -254,6 +294,7 @@ body {
   font-size: 1rem;
   margin-bottom: 0.8rem;
   text-transform: uppercase;
+  color: #54B689;
 }
 
 .side-list {
@@ -277,89 +318,8 @@ body {
 }
 
 /* -----------------------------
-   6. Projects or Additional Info
+   8. Responsive Design
 ------------------------------ */
-.project-link {
-  color: #007acc;           /* If you want a subtle accent for hyperlinks */
-  text-decoration: none;
-}
-
-.project-link:hover {
-  text-decoration: underline;
-}
-
-/* -----------------------------
-   7. Education 
------------------------------- */
-.edu-item-title {
-  font-weight: bold;
-  color: #333;
-  margin-bottom: 0.2rem;
-}
-
-.edu-item-institution {
-  font-style: italic;
-  font-size: 0.9rem;
-  color: #666;
-  margin: 0;
-}
-
-.edu-item-dates {
-  font-size: 0.9rem;
-  color: #777;
-  margin-bottom: 0.5rem;
-}
-
-/* -----------------------------
-   8. Additional Tweaks
------------------------------- */
-/* If you want a subtle background for the left column: */
-.left-col {
-  padding-right: 1rem;
-  border-right: 2px solid #eee;
-}
-
-/* If you want to highlight headings in a slightly darker color: */
-.section-title, .side-section-title {
-  color: #54B689;
-}
-
-.summary-section {
-  margin-bottom: 2rem;
-  border-bottom: 2px solid #eee;
-}
-
-.summary-content {
-  display: flex;
-  align-items: flex-start;
-  gap: 2rem;
-}
-
-.avatar {
-  flex-shrink: 0;
-}
-
-.avatar-image {
-  width: 120px;
-  height: 120px;
-  border-radius: 50%;
-  object-fit: cover;
-}
-
-/* Add responsive layout for summary section */
-@media (max-width: 768px) {
-  .summary-content {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    gap: 1rem;
-  }
-  
-  .avatar {
-    margin-bottom: 1rem;
-  }
-}
-
 /* Update header responsive layout */
 @media (max-width: 768px) {
   .resume-header {
