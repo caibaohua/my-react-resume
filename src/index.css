@@ -66,7 +66,7 @@ body {
 .resume-header {
   margin-bottom: 2rem;
   padding-bottom: 1rem;
-  border-bottom: 2px solid #ccc;
+  border-bottom: 2px solid #eee;
 }
 
 .resume-header .header-columns {
@@ -74,17 +74,21 @@ body {
   align-items: center;
   justify-content: space-between;
   flex-wrap: wrap;
+  gap: 2rem;  /* Match the gap of resume-columns */
 }
 
 /* Left column: Name & Role */
-.resume-header.header-left {
+.resume-header .header-left {
   flex: 1;
-  text-align: left;
+  min-width: 0;
+  padding-right: 2rem;  /* Add padding for the border */
+  border-right: 2px solid #eee;  /* Match the border of left-col */
 }
 
 /* Right column: Contact info */
 .resume-header .header-right {
-  flex: 0 0 300px; /* Fixed width for contact details */
+  flex: 0 0 300px;  /* Match the width of right-col */
+  max-width: 300px;
   text-align: right;
 }
 
@@ -322,7 +326,7 @@ body {
 
 .summary-section {
   margin-bottom: 2rem;
-  border-bottom: 2px solid #ccc;
+  border-bottom: 2px solid #eee;
 }
 
 .summary-content {
@@ -353,5 +357,62 @@ body {
   
   .avatar {
     margin-bottom: 1rem;
+  }
+}
+
+/* Update header responsive layout */
+@media (max-width: 768px) {
+  .resume-header {
+    margin-bottom: 1rem;
+  }
+
+  .resume-header .header-columns {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .resume-header .header-left {
+    padding-right: 0;
+    border-right: none;
+    margin-bottom: 0;
+    text-align: center;
+    width: 100%;
+  }
+  
+  .resume-header .header-right {
+    flex: 1;
+    max-width: 100%;
+    width: 100%;
+  }
+
+  .resume-header .contact-info {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 0.5rem 1rem;
+    margin-top: 1rem;
+    border-top: 2px solid #eee;
+    padding-top: 1rem;
+  }
+
+  .contact-item {
+    justify-content: flex-start;
+  }
+
+  .resume-header .contact-info li {
+    margin-bottom: 0.4rem;
+  }
+}
+
+/* For very small screens */
+@media (max-width: 480px) {
+  .resume-header .contact-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .contact-item {
+    justify-content: center;
   }
 }
