@@ -72,24 +72,27 @@ body {
 
 .resume-header .header-columns {
   display: flex;
+  flex-direction: row;
   align-items: center;
   justify-content: space-between;
-  flex-wrap: wrap;
-  gap: 1.5rem;  /* Reduced from 2rem */
+  gap: 2rem;
 }
 
 /* Left column: Name & Role */
 .resume-header .header-left {
-  flex: 1;
+  flex: 1 1 0;
   min-width: 0;
-  padding-right: 2rem;  /* Add padding for the border */
-  border-right: 2px solid #eee;  /* Match the border of left-col */
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
 }
 
 /* Right column: Contact info */
 .resume-header .header-right {
-  flex: 0 0 300px;  /* Match the width of right-col */
-  max-width: 300px;
+  flex: 0 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
   text-align: right;
 }
 

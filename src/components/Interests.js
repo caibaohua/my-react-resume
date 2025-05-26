@@ -1,15 +1,15 @@
 // src/components/Interests.js
 import React from "react";
+import RightColumnList from "./RightColumnList";
 
 function Interests({ interests }) {
   return (
     <section>
       <h2 className="section-title">Interests</h2>
-      <ul>
-        {interests.map((interest, idx) => (
-          <li key={idx}>{interest}</li>
-        ))}
-      </ul>
+      <RightColumnList
+        items={interests}
+        renderItem={(interest) => interest}
+      />
     </section>
   );
 }
