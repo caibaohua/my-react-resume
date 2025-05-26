@@ -374,3 +374,27 @@ body {
     justify-content: center;
   }
 }
+
+.language-toggle {
+  background: none;
+  border: 1px solid #54B689;
+  color: #54B689;
+  padding: 0.3rem 0.8rem;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  margin-bottom: 1rem;
+  transition: all 0.3s ease;
+}
+
+.language-toggle:hover {
+  background: #54B689;
+  color: white;
+}
+
+@media (max-width: 768px) {
+  .language-toggle {
+    margin: 0 auto 1rem;
+    display: block;
+  }
+}

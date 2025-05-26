@@ -1,7 +1,10 @@
 // src/components/Header.js
 import React from "react";
+import { useLanguage } from '../context/LanguageContext';
 
 function Header({ name, title, contact }) {
+  const { language, toggleLanguage } = useLanguage();
+
   return (
     <header className="resume-header">
       <div className="header-columns">
@@ -10,6 +13,12 @@ function Header({ name, title, contact }) {
           <h2 className="role">{title}</h2>
         </div>
         <div className="header-right">
+          <button 
+            className="language-toggle"
+            onClick={toggleLanguage}
+          >
+            {language === 'en' ? '中文' : 'English'}
+          </button>
           <ul className="contact-info">
             {contact.phone && (
               <li className="contact-item">
